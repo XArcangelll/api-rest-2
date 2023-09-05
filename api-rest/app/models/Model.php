@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use DateTimeInterface;
 
 /**
  * Base Model
@@ -10,4 +11,9 @@ namespace App\Models;
  */
 class Model extends \Leaf\Model
 {
+    protected function serializeDate(DateTimeInterface $date)
+    {
+    return $date->format('Y-m-d H:i:s');
+    }
+
 }
